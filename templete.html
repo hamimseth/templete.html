@@ -1,0 +1,86 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .user{
+            background-color: lightsalmon;
+            border-radius:10px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 5px 5px 5px gray;
+        }
+    </style>
+</head>
+<body>
+     <u id="user-lists"></u>
+    <div id="user-list"></div>
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(res => res.json())
+        .then(data => showUserNames(data));
+
+        function showUserNames(data) {
+            let userHtml = '';
+            data.forEach(user =>{
+                userHtml = userHtml + 
+                `<div class="user">
+                     <h2>${user.name}</h2>
+                     <p>${user.email}</p>
+                     <p>${user.company.name}.${user.company.catchPhrase}.${user.company.bs}</p>
+                </div>`
+            });
+               const ul = document.getElementById('user-list');
+               ul.innerHTML = userHtml;
+        }
+    </script>
+</body>
+</html> -->
+
+
+
+<!-- again -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .user{
+          background-color: lightsalmon;
+          border-radius: 10px;
+          margin: 10px;
+          padding: 20px;
+          box-shadow: 5px 5px 5px gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="user-container"></div>
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(res => res.json())
+            .then(data => showUserNames(data));
+
+        function showUserNames(data) {
+            let userName = '';
+            data.forEach(user => {
+                userName = userName + `<div class="user">
+                    <h2>${user.name}</h2>
+                    <p>${user.email}</p>
+                    <p>${user.company.name}.. ${user.company.catchPhrase}..${user.company.bs}</p>
+                    </div>`
+            })
+            const showContainer = document.getElementById('user-container')
+            showContainer.innerHTML = userName;
+        }
+    </script>
+</body>
+
+</html>
